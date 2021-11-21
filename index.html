@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>buh bye</title>
+  </head>
+  <body>
+    <h1>Fetch a rap song</h1>
+    <p id="poem">
+    <script>
+      console.log('about to rap a song');
+      catchPoem()
+        .then(poem => {
+          document.getElementById('rap').innerText = poem;
+          console.log('fu');
+        })
+        .catch(error => {
+          console.log('su');
+          console.error(error);
+        });
+
+      async function catchPoem() {
+        const response = await fetch('rap.txt');
+        return await response.text();
+      }
+    </script>
+  
+
+</p></body></html>
